@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Chat from '@/components/Chat';
 import {
   dehydrate,
