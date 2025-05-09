@@ -1,6 +1,7 @@
 import { fetchUserTokensById } from '@/utils/actions';
 import { UserProfile } from '@clerk/nextjs';
 import { auth } from '@clerk/nextjs/server';
+export const dynamic = 'force-dynamic'
 
 const ProfilePage = async () => {
   const { userId } = auth();

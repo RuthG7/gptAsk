@@ -3,6 +3,7 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import Providers from './providers';
 const inter = Inter({ subsets: ['latin'] });
+export const dynamic = 'force-dynamic'
 
 export const metadata = {
   title: 'GPTGenius',
