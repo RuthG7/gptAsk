@@ -1,0 +1,29 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql"        // or "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model LearningPath {
+  id         Int                 @id @default(autoincrement())
+  userId     String
+  title      String
+  createdAt  DateTime            @default(now())
+  items      LearningPathItem[]
+}
+
+model LearningPathItem {
+  id             Int          @id @default(autoincrement())
+  learningPath   LearningPath @relation(fields: [learningPathId], references: [id])
+  learningPathId Int
+  order          Int
+  title          String
+  description    String
+  resourceLink   String?
+  completed      Boolean      @default(false)
+}
